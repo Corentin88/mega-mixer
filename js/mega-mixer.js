@@ -70,44 +70,8 @@ reinitialiser.addEventListener("click", () => {
 });
 
 let selector = document.getElementById("numberSelect");
-selector.addEventListener("change", () => {
-  switch (selector.value) {
-    case "440":
-      deux();
-      break;
-    case "660":
-      trois();
-      break;
-    case "880":
-      quatre();
-      break;
-    case "1100":
-      cinq();
-      break;
-    case "1320":
-      six();
-      break;
-    default:
-      fdefault();
-  }
-});
 let cardContainer = document.getElementById("sizer");
-console.log(cardContainer);
-function deux() {
-  cardContainer.style.width = "440px";
-}
-function trois() {
-  cardContainer.style.width = "660px";
-}
-function quatre() {
-  cardContainer.style.width = "880px";
-}
-function cinq() {
-  cardContainer.style.width = "1100px";
-}
-function six() {
-  cardContainer.style.width = "1320px";
-}
-function fdefault() {
-  console.log("Défaut");
-}
+
+selector.addEventListener("change", (event) => {
+    cardContainer.style.width = `${event.target.value}px`;
+});
